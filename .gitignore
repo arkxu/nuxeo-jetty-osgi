@@ -3,3 +3,5 @@ reports
 .metadata
 .DS_Store
 *.log
+nuxeo/data
+nuxeo/schema
