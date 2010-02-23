@@ -1,25 +1,30 @@
 <?xml version="1.0"?>
-<component name="org.nuxeo.ecm.core.storage.sql.config">
+<component name="default-repository-config">
   <extension target="org.nuxeo.ecm.core.repository.RepositoryService"
     point="repository">
     <repository name="default"
       factory="org.nuxeo.ecm.core.storage.sql.coremodel.SQLRepositoryFactory">
       <repository name="default">
-        <!-- uncomment this to enable clustering
-             delay is in milliseconds, default is 0 (no delay before processing invalidations)
-        <clustering enabled="true" delay="1000" />
-        -->
+        <schema>
+          <field type="largetext">note</field>
+        </schema>
         <indexing>
-          <!-- example configuration for H2
-          <fulltext analyzer="org.apache.lucene.analysis.fr.FrenchAnalyzer"/>
-          -->
-          <!-- example configuration for PostgreSQL
-          <fulltext analyzer="french"/>
-          -->
-          <!-- example configuration for Microsoft SQL Server
-          <fulltext catalog="nuxeo" analyzer="french"/>
+          <!-- for H2 (Lucene Analyzer): -->
+          <fulltext analyzer="org.apache.lucene.analysis.fr.FrenchAnalyzer">
+            <index name="default"> 
+              <!-- all props implied -->
+            </index>
+          </fulltext> 
+          <!-- for PostgreSQL (Text Search Configuration):
+          <fulltext analyzer="english"/>
           -->
         </indexing>
+
+        <xa-datasource>org.h2.jdbcx.JdbcDataSource</xa-datasource>
+        <!-- Property name mentioned in SQLBackendHelper -->
+        <property name="URL">jdbc:h2:data/h2/vcsh2repo</property>
+        <property name="User">sa</property>
+        <property name="Password"></property>
       </repository>
     </repository>
   </extension>

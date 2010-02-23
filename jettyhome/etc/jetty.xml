@@ -237,15 +237,25 @@
 	<Set name="sendServerVersion">true</Set>
 	<Set name="sendDateHeader">true</Set>
 	<Set name="gracefulShutdown">1000</Set>
-	
+
 	<!-- ======== Nuxeo Directory Data Source ========= -->
 	<New id="nxsqldirectory" class="org.eclipse.jetty.plus.jndi.Resource">
-		<Arg></Arg>
 		<Arg>jdbc/nxsqldirectory</Arg>
+		<!--
+			<Arg> <New class="org.apache.derby.jdbc.EmbeddedDataSource"> <Set
+			name="databaseName">nxsqldirectory</Set> <Set
+			name="createDatabase">create</Set> </New> </Arg>
+		-->
 		<Arg>
-			<New class="org.apache.derby.jdbc.EmbeddedDataSource">
-				<Set name="databaseName">nxsqldirectory</Set>
-				<Set name="createDatabase">create</Set>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+				<Set name="url">jdbc:mysql://localhost:3306/nuxeo?relaxAutoCommit=true
+				</Set>
+				<Set name="username">root</Set>
+				<Set name="password"></Set>
+				<Set name="maxActive">100</Set>
+				<Set name="maxIdle">30</Set>
+				<Set name="maxWait">10000</Set>
 			</New>
 		</Arg>
 	</New>
