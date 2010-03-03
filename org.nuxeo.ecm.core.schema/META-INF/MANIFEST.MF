@@ -15,4 +15,5 @@ Nuxeo-Component: OSGI-INF/SchemaService.xml
 Nuxeo-Require: org.nuxeo.runtime
 Require-Bundle: com.sun.xml.relaxngDatatype,
  com.sun.xml.xsom,
- org.nuxeo.runtime
+ org.nuxeo.runtime,
+ org.apache.commons.logging

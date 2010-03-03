@@ -7,7 +7,8 @@ Bundle-Vendor: Nuxeo
 Bundle-Localization: plugin
 Export-Package: org.nuxeo.ecm.platform.usermanager;usermanager.api=split;mandatory:="usermanager.api",
  org.nuxeo.ecm.platform.usermanager.exceptions
-Require-Bundle: org.nuxeo.ecm.core.api
+Require-Bundle: org.nuxeo.ecm.core.api,
+ org.apache.commons.logging
 Archiver-Version: Plexus Archiver
 Build-Jdk: 1.6.0_03
 Created-By: Apache Maven
