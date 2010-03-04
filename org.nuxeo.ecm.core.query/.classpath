@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="/jettyhome/endorsedlibs/java-cup-0.11a.jar"/>
+	<classpathentry kind="lib" path="/jettyhome/endorsedlibs/joda-time-1.4.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

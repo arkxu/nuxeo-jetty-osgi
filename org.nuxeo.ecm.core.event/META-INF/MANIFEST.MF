@@ -1,0 +1,19 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nuxeo Event Service
+Bundle-SymbolicName: org.nuxeo.ecm.core.event;singleton:=true
+Bundle-Version: 5.3.1.-SNAPSHOT
+Bundle-Vendor: Nuxeo
+Bundle-Localization: bundle
+Require-Bundle: org.nuxeo.ecm.core.api,
+ system.bundle,
+ org.nuxeo.runtime.management
+Eclipse-LazyStart: true
+Nuxeo-Component: OSGI-INF/EventService.xml,
+ OSGI-INF/management-contrib.xml
+Export-Package: org.nuxeo.ecm.core.event,
+ org.nuxeo.ecm.core.event.impl,
+ org.nuxeo.ecm.core.event.jms,
+ org.nuxeo.ecm.core.event.script,
+ org.nuxeo.ecm.core.event.tx
+
