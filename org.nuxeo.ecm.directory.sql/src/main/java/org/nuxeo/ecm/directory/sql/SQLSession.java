@@ -20,6 +20,8 @@
 package org.nuxeo.ecm.directory.sql;
 
 import java.io.Serializable;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,6 +40,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.Map.Entry;
 
+import org.apache.commons.codec.binary.Base64;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.hibernate.dialect.Dialect;
@@ -844,7 +847,14 @@ public class SQLSession extends BaseSession implements EntrySource {
         }
         String storedPassword = (String) entry.getProperty(schemaName,
                 getPasswordField());
-        return password.equals(storedPassword);
+        String salt = extractSalt(storedPassword);
+        String testEncode = hashAndEncode(password, salt);
+        if (testEncode != null && testEncode.equals(storedPassword)) {
+            return true;
+        }
+
+        return false;
+        //return password.equals(storedPassword);
     }
 
     public boolean isAuthenticating() throws ClientException {
@@ -901,5 +911,67 @@ public class SQLSession extends BaseSession implements EntrySource {
      */
     public Connection getSqlConnection() {
         return sqlConnection;
+    }
+    
+    /**
+     * Exstracts the salt used to encode the given string.
+     * 
+     * @param encoded
+     * @return
+     */
+    private String extractSalt(String encoded) {
+        if (encoded == null) {
+            return null;
+        }
+
+        byte[] decoded = Base64.decodeBase64(encoded.getBytes());
+        byte[] saltBytes = new byte[4];
+
+        if (decoded.length < 4) {
+            return null;
+        }
+
+        System.arraycopy(decoded, decoded.length - 4, saltBytes, 0, 4);
+        return new String(saltBytes);
+    }
+    
+    /**
+     * Generates a SHA-1 hashed and Base64 encoded string from the given 
+     * password and salt. 
+     *      
+     * @param password
+     * @param salt
+     * @return
+     * @throws NoSuchAlgorithmException
+     */
+    private String hashAndEncode(String password, String salt) {
+        if (password == null || salt == null) {
+            return null;
+        }
+
+        byte[] saltBytes = salt.getBytes();
+        MessageDigest _md = null;
+        try {
+        	_md = MessageDigest.getInstance("SHA-1");
+    	} catch (NoSuchAlgorithmException nsa) {
+    		System.err.println("Unable to initialize the ssha algo. "+ nsa.toString());
+    	}
+        // compute digest
+        _md.update(password.getBytes());
+        _md.update(saltBytes);
+        byte[] digest = _md.digest();
+
+        // append salt to the digest
+        byte[] saltDigest = new byte[digest.length + saltBytes.length];
+        System.arraycopy(digest, 0, saltDigest, 0, digest.length);
+        System.arraycopy(saltBytes, 0, saltDigest, digest.length, saltBytes.length);
+
+        // encode 
+        byte[] encoded = Base64.encodeBase64(saltDigest);
+
+        StringBuilder sb = new StringBuilder(32);
+        sb.append("{SSHA}").append(new String(encoded));
+
+        return sb.toString();
     }
 }

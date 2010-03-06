@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nuxeo Directory
+Bundle-SymbolicName: org.nuxeo.ecm.directory.types.contrib;singleton:=true
+Bundle-Version: 5.3.1.-SNAPSHOT
+Bundle-ClassPath: nuxeo-platform-directory-types-contrib-5.3.1-SNAPSHOT.jar
+Bundle-Vendor: Nuxeo
+Bundle-Localization: bundle
+Require-Bundle: org.nuxeo.ecm.core.api
+Nuxeo-Component: OSGI-INF/DirectoryTypes.xml
+Archiver-Version: Plexus Archiver
+Build-Jdk: 1.6.0_03
+Bundle-Category: core
+Created-By: Apache Maven
+Built-By: hudson

@@ -260,4 +260,19 @@
 		</Arg>
 	</New>
 
+	<New id="crmsqldirectory" class="org.eclipse.jetty.plus.jndi.Resource">
+		<Arg>jdbc/crmsqldirectory</Arg>
+		<Arg>
+			<New class="org.apache.commons.dbcp.BasicDataSource">
+				<Set name="driverClassName">com.mysql.jdbc.Driver</Set>
+				<Set name="url">jdbc:mysql://localhost:3306/intalio?relaxAutoCommit=true
+				</Set>
+				<Set name="username">root</Set>
+				<Set name="password"></Set>
+				<Set name="maxActive">100</Set>
+				<Set name="maxIdle">30</Set>
+				<Set name="maxWait">10000</Set>
+			</New>
+		</Arg>
+	</New>
 </Configure>
