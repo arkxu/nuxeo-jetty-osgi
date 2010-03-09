@@ -4,5 +4,5 @@ reports
 .DS_Store
 *.log
 nuxeo/data
-nuxeo/schemas
+jettyhome/nuxeo/repos
 jettyhome/nuxeo/schemas

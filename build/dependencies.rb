@@ -19,7 +19,8 @@ COMMON = {
 
 APACHE = {
   :commons_logging => "commons-logging:commons-logging:jar:1.1",
-  :common_lang => "commons-lang:commons-lang:jar:2.3"
+  :common_lang => "commons-lang:commons-lang:jar:2.3",
+  :common_codec => "commons-codec:commons-codec:jar:1.3"
 }
 
 HIBERNATE = "org.hibernate:hibernate:jar:3.2.0.ga"

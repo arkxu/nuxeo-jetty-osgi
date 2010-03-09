@@ -1,5 +1,5 @@
 
-require "buildr4osgi"
+#require "buildr4osgi"
 
 require "build/dependencies.rb"
 require "build/repositories.rb"
@@ -40,7 +40,7 @@ define "nuxeo-jetty-osgi", :layout => layout do
   end
   
   define "org.nuxeo.ecm.directory.sql" do
-    compile.with project("org.nuxeo.ecm.directory.api"), project("org.nuxeo.ecm.directory.core"), NUXEO_ECM_CORE[:api], HIBERNATE, APACHE[:commons_logging], NUXEO_RUNTIME, NUXEO_ECM_CORE[:schema], NUXEO_COMMON, APACHE[:common_lang], OPEN_CSV
+    compile.with project("org.nuxeo.ecm.directory.api"), project("org.nuxeo.ecm.directory.core"), NUXEO_ECM_CORE[:api], HIBERNATE, APACHE[:commons_logging], NUXEO_RUNTIME, NUXEO_ECM_CORE[:schema], NUXEO_COMMON, APACHE[:common_lang], APACHE[:common_codec], OPEN_CSV
     package(:jar).with(:manifest=>_('META-INF/MANIFEST.MF')).enhance do |file|
       file.include _("OSGI-INF"), "OSGI-INF/*"
       file.include _("user2group.csv")

@@ -17,4 +17,3 @@ Nuxeo-Component: OSGI-INF/UserService.xml,OSGI-INF/UserManagerImpl.xml
 Bundle-Category: web,stateful
 Archiver-Version: Plexus Archiver
 Export-Package: org.nuxeo.ecm.platform.usermanager;usermanager.core=split;mandatory:="usermanager.core"
-Import-Package: org.nuxeo.ecm.platform.usermanager

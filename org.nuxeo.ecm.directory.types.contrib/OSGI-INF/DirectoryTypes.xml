@@ -7,7 +7,6 @@
     <schema name="group" src="directoryschema/group.xsd"/>
     <schema name="vocabulary" src="directoryschema/vocabulary.xsd"/>
     <schema name="xvocabulary" src="directoryschema/xvocabulary.xsd"/>
-    <schema name="crmuser" src="directoryschema/crmuser.xsd"/>
   </extension>
 
 </component>
