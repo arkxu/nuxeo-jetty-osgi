@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: commons-io Osgi Plug-in
+Bundle-SymbolicName: commons-io.commons-io
+Bundle-Version: 5.3.1.-SNAPSHOT-t20100114-000226
+Bundle-ClassPath: commons-io.commons-io_5.3.1.-SNAPSHOT-t20100114-000226.jar
+Export-Package: org.apache.commons.io,org.apache.commons.io.comparator,org.apache.commons.io.filefilter,org.apache.commons.io.input,org.apache.commons.io.output
+Require-Bundle: org.apache.commons.logging
+Built-By: hudson
+Archiver-Version: Plexus Archiver
+Build-Jdk: 1.6.0_03
+Created-By: Apache Maven

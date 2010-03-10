@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nuxeo ECM Core
+Bundle-SymbolicName: org.nuxeo.ecm.core;singleton:=true
+Bundle-Version: 1.6.1.-SNAPSHOT
+Bundle-ClassPath: nuxeo-core-1.6.1-SNAPSHOT.jar,
+ lib/connector-api.jar
+Bundle-Activator: org.nuxeo.ecm.core.NXCoreActivator
+Bundle-Vendor: Nuxeo
+Bundle-Localization: bundle
+Export-Package: org.nuxeo.ecm.core,
+ org.nuxeo.ecm.core.api,
+ org.nuxeo.ecm.core.api.local,
+ org.nuxeo.ecm.core.lifecycle,
+ org.nuxeo.ecm.core.lifecycle.extensions,
+ org.nuxeo.ecm.core.lifecycle.impl,
+ org.nuxeo.ecm.core.model,
+ org.nuxeo.ecm.core.repository,
+ org.nuxeo.ecm.core.security,
+ org.nuxeo.ecm.core.versioning
+Require-Bundle: org.nuxeo.ecm.core.api;visibility:=reexport,
+ org.nuxeo.ecm.core.schema;visibility:=reexport,
+ org.nuxeo.ecm.core.query,
+ system.bundle,
+ org.nuxeo.ecm.core.event
+Build-Jdk: 1.6.0_03
+Bundle-Category: core
+Created-By: Apache Maven
+Eclipse-ExtensibleAPI: true
+Eclipse-LazyStart: true
+Archiver-Version: Plexus Archiver
+Nuxeo-Component: OSGI-INF/CoreService.xml,OSGI-INF/RepositoryService.xml,OSGI-INF/CoreExtensions.xml,OSGI-INF/LifeCycleService.xml,OSGI-INF/LifeCycleCoreExtensions.xml,OSGI-INF/lifecycle-listener-contrib.xml,OSGI-INF/SecurityService.xml,OSGI-INF/permissions-contrib.xml,OSGI-INF/security-policy-contrib.xml
+Built-By: hudson

@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: commons-jexl Osgi Plug-in
+Bundle-SymbolicName: commons-jexl.commons-jexl
+Bundle-Version: 5.3.1.-SNAPSHOT-t20100114-000225
+Bundle-ClassPath: commons-jexl.commons-jexl_5.3.1.-SNAPSHOT-t20100114-000225.jar
+Export-Package: org.apache.commons.jexl, org.apache.commons.jexl.context, org.apache.commons.jexl.junit, org.apache.commons.jexl.parser, org.apache.commons.jexl.resolver,org.apache.commons.jexl.util, org.apache.commons.jexl.util.introspection
+Archiver-Version: Plexus Archiver
+Built-By: hudson
+Build-Jdk: 1.6.0_03
+Created-By: Apache Maven

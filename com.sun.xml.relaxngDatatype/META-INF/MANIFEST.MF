@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: relaxngDatatype Osgi Plug-in
+Bundle-SymbolicName: com.sun.xml.relaxngDatatype
+Bundle-Version: 5.3.1.-SNAPSHOT-t20100114-000226
+Bundle-ClassPath: com.sun.xml.relaxngDatatype_5.3.1.-SNAPSHOT-t20100114-000226.jar
+Export-Package: org.relaxng.datatype, org.relaxng.datatype.helpers
+Archiver-Version: Plexus Archiver
+Built-By: hudson
+Build-Jdk: 1.6.0_03
+Created-By: Apache Maven

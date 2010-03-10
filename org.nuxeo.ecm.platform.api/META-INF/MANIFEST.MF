@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ECM Platform API
+Bundle-SymbolicName: org.nuxeo.ecm.platform.api
+Bundle-Version: 5.3.1.-SNAPSHOT
+Bundle-ClassPath: nuxeo-platform-api-5.3.1-SNAPSHOT.jar
+Bundle-Vendor: Nuxeo
+Bundle-Localization: plugin
+Export-Package: org.nuxeo.ecm.platform.api,org.nuxeo.ecm.platform.api.login
+Require-Bundle: org.nuxeo.runtime,
+ org.nuxeo.ecm.core.api,
+ org.apache.commons.logging
+Import-Package: org.jboss.security;resolution:=optional,org.jnp.interfaces;resolution:=optional
+Created-By: Apache Maven
+Archiver-Version: Plexus Archiver
+Build-Jdk: 1.6.0_03
+Nuxeo-Component: OSGI-INF/PlatformService.xml
+Built-By: hudson
