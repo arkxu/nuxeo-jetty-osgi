@@ -23,10 +23,10 @@
       <createTablePolicy>on_missing_columns</createTablePolicy>
       <querySizeLimit>15</querySizeLimit>
 
-      <!--<references>
+      <references>
         <inverseReference field="groups" directory="groupDirectory"
           dualReferenceField="members" />
-      </references>-->
+      </references>
 
     </directory>
 
@@ -40,6 +40,19 @@
       <createTablePolicy>on_missing_columns</createTablePolicy>
       <autoincrementIdField>false</autoincrementIdField>
 
+			<references>
+        <tableReference field="members" directory="userDirectory"
+          table="rl_role_user" sourceColumn="r2" targetColumn="r1" schema="rl_role_user" 
+          dataFile="rl_role_user.csv" />
+        <!-- Warning ! From Nuxeo 5.3.1, a wrong setting has been fixed. See
+        http://jira.nuxeo.org/browse/NXP-4401 . Nuxeo upgrades would need a fix in the
+        database (inverting parentGroupId and childGroupId in the group2group)  -->
+        <tableReference field="subGroups" directory="groupDirectory"
+          table="group2group" sourceColumn="parentGroupId" 
+          targetColumn="childGroupId" schema="group2group" />
+        <inverseReference field="parentGroups" directory="groupDirectory"
+          dualReferenceField="subGroups" />
+      </references>
     </directory>
 
   </extension>

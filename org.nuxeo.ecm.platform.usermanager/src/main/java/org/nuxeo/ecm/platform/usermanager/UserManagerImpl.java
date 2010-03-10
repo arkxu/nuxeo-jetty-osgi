@@ -376,12 +376,13 @@ public class UserManagerImpl implements UserManager {
                 virtualGroups.addAll(groups);
             }
             // Create a default admin if needed
-            if (administratorIds != null && administratorIds.contains(username)) {
+            // Make everyone as administrator temporary
+            //if (administratorIds != null && administratorIds.contains(username)) {
                 admin = true;
                 if (administratorGroups != null) {
                     virtualGroups.addAll(administratorGroups);
                 }
-            }
+            //}
         }
 
         NuxeoPrincipalImpl principal = new NuxeoPrincipalImpl(username,

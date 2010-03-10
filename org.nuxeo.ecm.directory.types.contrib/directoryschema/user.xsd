@@ -6,6 +6,7 @@
 
   <xs:include schemaLocation="base.xsd" />
 
+	<xs:element name="xid" type="xs:string" />
   <xs:element name="name" type="xs:string" />
   <xs:element name="pass" type="xs:string" />
   <xs:element name="firstname" type="xs:string" />
@@ -13,8 +14,8 @@
   <xs:element name="office" type="xs:string" />
   <xs:element name="emailaddress1" type="xs:string" />
 
-  <!-- inverse reference 
-  <xs:element name="groups" type="nxs:stringList" />-->
+  <!-- inverse reference -->
+  <xs:element name="groups" type="nxs:stringList" />
 
 </xs:schema>
 

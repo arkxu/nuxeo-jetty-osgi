@@ -55,7 +55,7 @@ public class NuxeoPrincipalImpl implements NuxeoPrincipal {
      * @deprecated: harcoded
      */
     @Deprecated
-    public static final String USERNAME_COLUMN = "username";
+    public static final String USERNAME_COLUMN = "name";
 
     /**
      * @deprecated: harcoded
@@ -73,19 +73,19 @@ public class NuxeoPrincipalImpl implements NuxeoPrincipal {
      * @deprecated: harcoded
      */
     @Deprecated
-    public static final String COMPANY_COLUMN = "company";
+    public static final String COMPANY_COLUMN = "office";
 
     /**
      * @deprecated: harcoded
      */
     @Deprecated
-    public static final String PASSWORD_COLUMN = "password";
+    public static final String PASSWORD_COLUMN = "pass";
 
     /**
      * @deprecated: harcoded
      */
     @Deprecated
-    public static final String EMAIL_COLUMN = "email";
+    public static final String EMAIL_COLUMN = "emailaddress1";
 
     /**
      * @deprecated: harcoded
